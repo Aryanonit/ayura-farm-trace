@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Heart } from "lucide-react";
+import { useLanguage } from "@/hooks/useLanguage";
 import heroFarmer from "@/assets/hero-farmer.jpg";
 
 const MissionSection = () => {
+  const { t } = useLanguage();
+  
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
@@ -24,7 +27,7 @@ const MissionSection = () => {
                     <Heart className="w-6 h-6 text-accent mt-1" />
                     <div>
                       <blockquote className="text-foreground font-medium text-lg leading-relaxed">
-                        "Our mission is to bring the trust back to tradition by empowering the farmers at the heart of Ayurveda."
+                        "{t('mission.quote')}"
                       </blockquote>
                       <div className="mt-3 text-sm text-muted-foreground">
                         — The Ayura Team

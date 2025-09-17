@@ -1,29 +1,32 @@
 import { Shield, Users, FileCheck, Eye } from "lucide-react";
+import { useLanguage } from "@/hooks/useLanguage";
 
 const FeaturesSection = () => {
+  const { t } = useLanguage();
+  
   const features = [
     {
       icon: Shield,
-      title: "Blockchain Secured",
-      description: "Every step is recorded on an immutable ledger, preventing fraud and tampering.",
+      title: t('features.blockchain.title'),
+      description: t('features.blockchain.description'),
       gradient: "from-accent to-accent/70"
     },
     {
       icon: Users,
-      title: "Farmer First Design", 
-      description: "An intuitive, multi-language interface with OTP login empowers even non-technical users.",
+      title: t('features.farmer.title'), 
+      description: t('features.farmer.description'),
       gradient: "from-primary to-primary/70"
     },
     {
       icon: FileCheck,
-      title: "IPFS Certified Documents",
-      description: "Lab reports and quality certificates are stored decentrally, linked directly to the batch.",
+      title: t('features.ipfs.title'),
+      description: t('features.ipfs.description'),
       gradient: "from-secondary to-secondary/70"
     },
     {
       icon: Eye,
-      title: "Real-Time Tracking",
-      description: "Gain unparalleled visibility into the entire supply chain with live updates.",
+      title: t('features.tracking.title'),
+      description: t('features.tracking.description'),
       gradient: "from-accent to-primary"
     }
   ];
@@ -33,13 +36,13 @@ const FeaturesSection = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            Why Ayura{" "}
+            {t('features.title')}{" "}
             <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-              Works
+              {t('features.works')}
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Built with cutting-edge technology to ensure authenticity, transparency, and trust in every herbal product.
+            {t('features.description')}
           </p>
         </div>
         

@@ -1,25 +1,28 @@
 import { Sprout, Link2, QrCode } from "lucide-react";
+import { useLanguage } from "@/hooks/useLanguage";
 
 const HowItWorksSection = () => {
+  const { t } = useLanguage();
+  
   const steps = [
     {
       icon: Sprout,
-      title: "Register at the Source",
-      description: "Farmers create a digital identity for each batch with a single tap, geo-tagging it on the blockchain.",
+      title: t('howItWorks.step1.title'),
+      description: t('howItWorks.step1.description'),
       color: "text-accent",
       bgColor: "bg-accent/10"
     },
     {
       icon: Link2,
-      title: "Update the Journey", 
-      description: "Processors and distributors add their step to the immutable ledger, creating an unbroken chain of custody.",
+      title: t('howItWorks.step2.title'), 
+      description: t('howItWorks.step2.description'),
       color: "text-primary",
       bgColor: "bg-primary/10"
     },
     {
       icon: QrCode,
-      title: "Verify with a Scan",
-      description: "Consumers scan the product's QR code to instantly view its complete, verified history.",
+      title: t('howItWorks.step3.title'),
+      description: t('howItWorks.step3.description'),
       color: "text-secondary",
       bgColor: "bg-secondary/10"
     }
@@ -30,13 +33,13 @@ const HowItWorksSection = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            Three Steps to{" "}
+            {t('howItWorks.title')}{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Trust
+              {t('howItWorks.works')}
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Experience radical transparency in the Ayurvedic supply chain through our simple, secure process.
+            {t('howItWorks.description')}
           </p>
         </div>
         
